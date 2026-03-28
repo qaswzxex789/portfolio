@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Ressonancia Universal e um portfolio tematico em TypeScript sobre musica, astronomia e a ciencia das frequencias."
+    >
+    <title>Ressonancia Universal | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+    <canvas id="blackhole" aria-hidden="true"></canvas>
+
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"></span>
+                <span>Ressonancia Universal</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegacao principal">
+                <a data-nav="home" href="index.html">Home</a>
+                <a data-nav="sobre" href="sobre.html">Sobre</a>
+                <a data-nav="conteudo" href="conteudo.html">Conteudo</a>
+            </nav>
+        </header>
+
+        <main id="app" class="main-content">
+            <section class="hero hero-home" data-reveal>
+                <div class="hero-copy">
+                    <p class="eyebrow">Portfolio em TypeScript puro</p>
+                    <h1>Um observatorio digital sobre som, espaco e gravidade.</h1>
+                    <p class="lead">
+                        Este projeto conecta musica, astronomia e design interativo em uma experiencia
+                        visual inspirada no cinema espacial. A proposta e mostrar como frequencias,
+                        orbitas e escalas podem conversar em um portfolio bonito, informativo e vivo.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="conteudo.html">Explorar conteudos</a>
+                        <a class="button button-secondary" href="sobre.html">Entender o conceito</a>
+                    </div>
+                </div>
+
+                <aside class="hero-panel content-panel">
+                    <p class="panel-label">Leitura rapida</p>
+                    <div id="heroMetrics" class="metric-grid"></div>
+                    <p class="panel-note">
+                        O fundo animado foi desenhado em Canvas com particulas, glow, lente gravitacional
+                        fake e movimento por `requestAnimationFrame`.
+                    </p>
+                </aside>
+            </section>
+
+            <section class="section-grid" data-reveal>
+                <article class="content-panel">
+                    <p class="section-label">Tema</p>
+                    <h2>Por que esse assunto funciona bem em um portfolio?</h2>
+                    <p>
+                        Porque ele foge do obvio. Em vez de repetir referencias de cultura pop, o site
+                        usa um tema real e autoral: a relacao entre fenomenos cosmicos e percepcao sonora.
+                        Isso cria repertorio, personalidade e um visual forte para apresentacao academica.
+                    </p>
+                </article>
+
+                <article class="content-panel accent-panel">
+                    <p class="section-label">Destaque visual</p>
+                    <blockquote>
+                        "A materia gira, aquece e brilha enquanto a gravidade dobra a cena."
+                    </blockquote>
+                    <p>
+                        O buraco negro foi pensado como pano de fundo cinematografico, sem atrapalhar a
+                        navegacao principal nem o conteudo das paginas.
+                    </p>
+                </article>
+            </section>
+
+            <section class="section-heading" data-reveal>
+                <p class="section-label">Interacoes</p>
+                <h2>Tres portas de entrada para o universo do projeto.</h2>
+                <p>
+                    Os cards abaixo trocam informacoes em tempo real e reforcam o tema do portfolio com
+                    pequenas pifadas editoriais.
+                </p>
+            </section>
+
+            <section class="feature-grid">
+                <article class="info-card" data-reveal>
+                    <p class="card-kicker">Musica</p>
+                    <h3>Obras que parecem olhar para o ceu.</h3>
+                    <p id="musica" class="fact-value" aria-live="polite">Carregando selecao...</p>
+                    <p id="musicaDetalhe" class="fact-meta">Preparando uma referencia sonora.</p>
+                    <button id="btnMusica" class="button button-ghost" type="button">Trocar selecao</button>
+                </article>
+
+                <article class="info-card" data-reveal>
+                    <p class="card-kicker">Astronomia</p>
+                    <h3>Fenomenos que inspiram escala e movimento.</h3>
+                    <p id="planeta" class="fact-value" aria-live="polite">Carregando destaque...</p>
+                    <p id="planetaDetalhe" class="fact-meta">Buscando um objeto celeste.</p>
+                    <button id="btnPlaneta" class="button button-ghost" type="button">Ver outro fenomeno</button>
+                </article>
+
+                <article class="info-card" data-reveal>
+                    <p class="card-kicker">Conexao</p>
+                    <h3>Ideias que ligam ciencia e sensacao.</h3>
+                    <p id="conexao" class="fact-value" aria-live="polite">Carregando insight...</p>
+                    <p id="conexaoDetalhe" class="fact-meta">Montando a ponte entre os temas.</p>
+                    <button id="btnConexao" class="button button-ghost" type="button">Gerar nova leitura</button>
+                </article>
+            </section>
+
+            <section class="split-layout" data-reveal>
+                <article class="content-panel">
+                    <p class="section-label">Experiencia</p>
+                    <h2>Feito para parecer um site hospedado de portfolio, nao um exercicio cru.</h2>
+                    <ul class="detail-list">
+                        <li>Layout responsivo com contraste alto e leitura confortavel.</li>
+                        <li>Navegacao simples por paginas reais: Home, Sobre e Conteudo.</li>
+                        <li>Canvas fixo atras de todo o site, sem quebrar o fluxo principal.</li>
+                        <li>Codigo modular em TypeScript, pronto para compilar em `dist/`.</li>
+                    </ul>
+                </article>
+
+                <article class="content-panel">
+                    <p class="section-label">Proxima etapa</p>
+                    <h2>Publicacao online</h2>
+                    <p>
+                        A estrutura foi pensada para hospedagem estatica. Com GitHub Pages ativado, qualquer
+                        pessoa com o link consegue abrir o site remotamente em desktop ou celular.
+                    </p>
+                    <a class="inline-link" href="conteudo.html">Ver o catalogo completo do projeto</a>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Ressonancia Universal</p>
+            <p>TypeScript, HTML, CSS e Canvas. <span id="footerYear"></span></p>
+        </footer>
+    </div>
+
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>

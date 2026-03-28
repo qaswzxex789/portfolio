@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Colecao de conteudos do portfolio Ressonancia Universal com repertorios, observacoes e conexoes entre musica e astronomia."
+    >
+    <title>Ressonancia Universal | Conteudo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="conteudo">
+    <canvas id="blackhole" aria-hidden="true"></canvas>
+
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark"></span>
+                <span>Ressonancia Universal</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegacao principal">
+                <a data-nav="home" href="index.html">Home</a>
+                <a data-nav="sobre" href="sobre.html">Sobre</a>
+                <a data-nav="conteudo" href="conteudo.html">Conteudo</a>
+            </nav>
+        </header>
+
+        <main id="app" class="main-content">
+            <section class="hero hero-secondary" data-reveal>
+                <div class="hero-copy">
+                    <p class="eyebrow">Conteudo diverso</p>
+                    <h1>Curadoria de referencias, fenomenos e rotas de exploracao.</h1>
+                    <p class="lead">
+                        Esta pagina concentra o repertorio do projeto: obras musicais, observacoes
+                        astronomicas, ideias de conexao e pequenas propostas de experiencia para quem visita.
+                    </p>
+                </div>
+
+                <aside class="hero-panel content-panel">
+                    <p class="panel-label">Uso em apresentacao</p>
+                    <p>
+                        Aqui ficam os argumentos visuais e informativos que ajudam a sustentar o tema na
+                        demonstracao ao vivo, sem depender apenas da pagina inicial.
+                    </p>
+                </aside>
+            </section>
+
+            <section class="section-heading" data-reveal>
+                <p class="section-label">Colecoes</p>
+                <h2>Cartoes de referencia para navegar pelo tema.</h2>
+                <p>
+                    Cada bloco mistura descricao curta, direcao editorial e contexto suficiente para o site
+                    parecer um portfolio real, e nao so um fundo bonito.
+                </p>
+            </section>
+
+            <section id="contentGrid" class="collection-grid"></section>
+
+            <section class="section-heading" data-reveal>
+                <p class="section-label">Rotas de experiencia</p>
+                <h2>Como alguem pode explorar o site em poucos minutos.</h2>
+                <p>
+                    Esta segunda camada ajuda na fala da apresentacao: ela mostra que existe criterio de
+                    conteudo, roteiro de leitura e intencao de design.
+                </p>
+            </section>
+
+            <section id="sessionGrid" class="session-grid"></section>
+
+            <section class="split-layout" data-reveal>
+                <article class="content-panel">
+                    <p class="section-label">Hospedagem</p>
+                    <h2>Estrutura pronta para link publico.</h2>
+                    <p>
+                        Como o projeto e estatico, ele pode ser servido por GitHub Pages, Netlify ou Vercel
+                        com muita facilidade. Isso garante que qualquer pessoa com o link consiga acessar o
+                        site fora da sua maquina.
+                    </p>
+                </article>
+
+                <article class="content-panel accent-panel">
+                    <p class="section-label">Encerramento</p>
+                    <h2>Feito para impressionar sem exagerar.</h2>
+                    <p>
+                        O visual cinematografico chama atencao, mas o que sustenta o trabalho e a soma de
+                        boa estrutura, conteudo coerente e codigo legivel.
+                    </p>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Ressonancia Universal</p>
+            <p>TypeScript, HTML, CSS e Canvas. <span id="footerYear"></span></p>
+        </footer>
+    </div>
+
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>

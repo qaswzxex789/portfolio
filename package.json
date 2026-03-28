@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio tematico em TypeScript, HTML, CSS e Canvas.",
+  "main": "server.js",
+  "scripts": {
+    "build": "npx tsc",
+    "check": "npx tsc --noEmit",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "typescript",
+    "portfolio",
+    "canvas",
+    "astronomia"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
+}
