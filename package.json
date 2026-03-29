@@ -4,9 +4,7 @@
   "description": "Portfolio tematico em TypeScript, HTML, CSS e Canvas.",
   "main": "server.js",
   "scripts": {
-    "build": "npx tsc",
-    "check": "npx tsc --noEmit",
-    "start": "node server.js"
+  "dev": "concurrently \"tsc --watch\" \"serve .\""
   },
   "keywords": [
     "typescript",
