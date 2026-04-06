@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="Pagina sobre o conceito do portfolio Ressonancia Universal e as escolhas de design, conteudo e desenvolvimento."
+        content="Página temática sobre astronomia, ciclos cósmicos e luz em movimento."
     >
-    <title>Ressonancia Universal | Sobre</title>
+    <title>Ressonância Universal | Sobre</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="sobre">
@@ -17,96 +17,215 @@
         <header class="site-header">
             <a class="brand" href="index.html">
                 <span class="brand-mark"></span>
-                <span>Ressonancia Universal</span>
+                <span>Ressonância Universal</span>
             </a>
 
-            <nav class="nav" aria-label="Navegacao principal">
-                <a data-nav="home" href="index.html">Home</a>
-                <a data-nav="sobre" href="sobre.html">Sobre</a>
-                <a data-nav="conteudo" href="conteudo.html">Conteudo</a>
-            </nav>
+            <div class="header-actions">
+                <nav class="nav" aria-label="Navegação principal">
+                    <a data-nav="home" href="index.html">Home</a>
+                    <a data-nav="sobre" href="sobre.html">Sobre</a>
+                    <a data-nav="conteudo" href="conteudo.html">Conteúdo</a>
+                </nav>
+
+                <a
+                    class="header-link"
+                    href="https://github.com/qaswzxex789/portfolio"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Repositório
+                </a>
+            </div>
         </header>
 
         <main id="app" class="main-content">
             <section class="hero hero-secondary" data-reveal>
                 <div class="hero-copy">
-                    <p class="eyebrow">Sobre o projeto</p>
-                    <h1>Um tema real, diferente e com identidade propria.</h1>
+                    <p class="eyebrow">Tema: astronomia</p>
+                    <h1>O universo organiza o espanto.</h1>
                     <p class="lead">
-                        Ressonancia Universal nasceu da ideia de transformar um interesse por ciencia e
-                        paisagens sonoras em um portfolio tematico. Em vez de usar referencias saturadas,
-                        o site aposta em astronomia, frequencias, observacao e narrativa visual.
+                        Estrelas explodem, pulsares contam tempo, a gravidade curva trajetos
+                        e a luz chega atrasada.
                     </p>
+
+                    <div class="signal-list" aria-label="Pilares astronômicos">
+                        <span class="signal-chip">pulsar</span>
+                        <span class="signal-chip">órbita</span>
+                        <span class="signal-chip">supernova</span>
+                        <span class="signal-chip">lente</span>
+                    </div>
                 </div>
 
-                <aside class="hero-panel content-panel">
-                    <p class="panel-label">Objetivo</p>
-                    <p>
-                        Entregar um site organizado, bonito e com conteudo de verdade, mostrando dominio
-                        de TypeScript, estrutura estatica, responsividade e direcao de arte.
-                    </p>
+                <aside class="hero-sidebar">
+                    <article class="hero-panel content-panel">
+                        <p class="panel-label">O que observar</p>
+                        <p>
+                            Quase nada no céu é estático. Até o brilho mais calmo carrega movimento.
+                        </p>
+                    </article>
+
+                    <article class="hero-panel content-panel accent-panel">
+                        <p class="panel-label">Em uma frase</p>
+                        <blockquote>
+                            Toda órbita é uma negociação entre queda e fuga.
+                        </blockquote>
+                    </article>
                 </aside>
             </section>
 
-            <section class="section-grid" data-reveal>
-                <article class="content-panel">
-                    <p class="section-label">Conceito</p>
-                    <h2>O que o visitante encontra aqui?</h2>
+            <section class="visual-showcase" data-reveal>
+                <article class="content-panel visual-copy accent-panel">
+                    <p class="section-label">Observação</p>
+                    <h2>Luz e matéria deixam cicatriz.</h2>
                     <p>
-                        Um portfolio em tres paginas que combina texto editorial, cards dinamicos,
-                        informacoes tematicas e um fundo animado de buraco negro. A navegacao foi mantida
-                        leve para priorizar leitura e apresentacao ao vivo.
+                        Buracos negros dobram a visão. Nebulosas guardam o rastro luminoso
+                        de explosões antigas.
                     </p>
                 </article>
 
+                <figure class="visual-card visual-card-feature">
+                    <img
+                        src="assets/images/sagittarius-a.jpg"
+                        alt="Imagem do buraco negro Sagittarius A* no centro da Via Láctea"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>
+                        <span class="visual-caption-label">Centro extremo</span>
+                        <p>Até a luz muda de comportamento quando a gravidade domina a cena.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="visual-card">
+                    <img
+                        src="assets/images/crab-nebula-sonification.jpg"
+                        alt="Imagem oficial da sonificação da Nebulosa do Caranguejo"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>
+                        <span class="visual-caption-label">Explosão que fica</span>
+                        <p>O resto de uma supernova ainda desenha ritmo, brilho e textura.</p>
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="story-layout" data-reveal>
                 <article class="content-panel">
-                    <p class="section-label">Tecnica</p>
-                    <h2>Como o projeto foi construido?</h2>
+                    <p class="section-label">Universo</p>
+                    <h2>Escala também é estrutura.</h2>
+                    <div class="detail-columns">
+                        <p>Galáxias giram como se improvisassem.</p>
+                        <p>Mas por trás do assombro existe padrão, repetição e força.</p>
+                    </div>
+                </article>
+
+                <article class="content-panel">
+                    <p class="section-label">Fenômenos</p>
+                    <h2>Alguns eventos parecem ficção.</h2>
                     <ul class="detail-list">
-                        <li>HTML sem frameworks para manter a estrutura clara e didatica.</li>
-                        <li>CSS com variaveis, camadas translucidas, gradientes e responsividade.</li>
-                        <li>TypeScript strict para animacao, renderizacao de secoes e interacoes.</li>
-                        <li>Canvas 2D com glow, particulas, distorcao fake e parallax leve.</li>
+                        <li>Pulsares marcam o tempo como relógios extremos.</li>
+                        <li>Buracos negros torcem luz, espaço e escala.</li>
+                        <li>Supernovas espalham matéria pelo escuro.</li>
+                        <li>Discos de acreção brilham no limite.</li>
                     </ul>
                 </article>
             </section>
 
-            <section class="section-heading" data-reveal>
-                <p class="section-label">Linha do tempo</p>
-                <h2>Do conceito ao acabamento visual.</h2>
-                <p>
-                    Abaixo esta o fluxo principal de decisoes que transformou o trabalho em um portfolio
-                    apresentavel e pronto para hospedagem.
-                </p>
+            <section class="feature-stage" data-reveal>
+                <div class="section-heading section-heading-inline">
+                    <div>
+                        <p class="section-label">Seis focos</p>
+                        <h2>Do colapso à luz.</h2>
+                    </div>
+                    <p>
+                        Cada bloco abaixo resume um jeito de o cosmos produzir forma, ritmo ou contraste.
+                    </p>
+                </div>
+
+                <section class="process-grid-large" aria-label="Pilares astronômicos">
+                    <article class="content-panel process-card">
+                        <p class="section-label">01</p>
+                        <h2>Supernova</h2>
+                        <p>Explosão que espalha matéria e memória.</p>
+                    </article>
+
+                    <article class="content-panel process-card">
+                        <p class="section-label">02</p>
+                        <h2>Pulsar</h2>
+                        <p>Rotação tão precisa que parece compasso.</p>
+                    </article>
+
+                    <article class="content-panel process-card accent-panel">
+                        <p class="section-label">03</p>
+                        <h2>Lente gravitacional</h2>
+                        <p>A luz perde a linha quando a massa pesa demais.</p>
+                    </article>
+                </section>
             </section>
 
             <section id="timelineGrid" class="timeline-grid"></section>
 
-            <section class="split-layout" data-reveal>
+            <section class="editorial-grid" data-reveal>
                 <article class="content-panel accent-panel">
-                    <p class="section-label">Aprendizado</p>
-                    <h2>O que esse tipo de projeto ajuda a treinar?</h2>
+                    <p class="section-label">Leitura final</p>
+                    <h2>O céu parece silencioso só de longe.</h2>
                     <p>
-                        Composicao visual, organizacao de arquivos, seguranca no TypeScript, uso de canvas,
-                        lapidacao de conteudo e preparacao de entrega para avaliacao academica ou GitHub.
+                        Quanto mais fundo se olha, mais claro fica o movimento.
                     </p>
                 </article>
 
                 <article class="content-panel">
-                    <p class="section-label">Entrega</p>
-                    <h2>Documentacao separada</h2>
+                    <p class="section-label">Síntese</p>
+                    <h2>Astronomia não é só distância.</h2>
                     <p>
-                        Alem do codigo, o projeto inclui um documento complementar para explicar o tema,
-                        como executar localmente e o que foi aprendido no processo.
+                        É ritmo, matéria e luz organizados em escalas quase absurdas.
                     </p>
-                    <a class="inline-link" href="docs/entrega.md">Abrir documento de entrega</a>
+                    <a class="inline-link" href="#timelineGrid">Rever fenômenos</a>
                 </article>
             </section>
         </main>
 
         <footer class="site-footer">
-            <p>Ressonancia Universal</p>
-            <p>TypeScript, HTML, CSS e Canvas. <span id="footerYear"></span></p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="brand-mark"></span>
+                        <span>Ressonância Universal</span>
+                    </a>
+                    <p class="footer-note">
+                        Página dedicada a astronomia, luz e escalas extremas.
+                    </p>
+                </div>
+
+                <div>
+                    <p class="footer-title">Navegação</p>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="sobre.html">Sobre</a>
+                        <a href="conteudo.html">Conteúdo</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="footer-title">Tema</p>
+                    <div class="footer-links">
+                        <span>Supernova</span>
+                        <span>Pulsar</span>
+                        <span>Órbita</span>
+                        <span>Luz</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="footer-title">Explorar</p>
+                    <div class="footer-links">
+                        <a href="#timelineGrid">Fenômenos</a>
+                        <a href="https://github.com/qaswzxex789/portfolio" target="_blank" rel="noreferrer">GitHub</a>
+                        <span><span id="footerYear"></span></span>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 

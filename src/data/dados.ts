@@ -14,6 +14,22 @@ export type TimelineItem = {
     phase: string;
     title: string;
     description: string;
+    outcome: string;
+};
+
+export type AudioItem = {
+    src: string;
+    type: string;
+    label: string;
+    caption: string;
+    sourceLabel: string;
+    sourceHref: string;
+};
+
+export type ImageItem = {
+    src: string;
+    alt: string;
+    caption: string;
 };
 
 export type CollectionItem = {
@@ -21,192 +37,262 @@ export type CollectionItem = {
     title: string;
     description: string;
     meta: string;
+    highlight: string;
+    isWide?: boolean;
+    audio?: AudioItem;
+    image?: ImageItem;
 };
 
 export type SessionItem = {
     label: string;
     title: string;
     description: string;
+    duration: string;
+    payoff: string;
 };
 
 export const musicHighlights: HighlightItem[] = [
     {
-        title: "Gustav Holst - The Planets",
-        description: "Uma suite orquestral que traduz movimento e escala em texturas dramaticas.",
-        detail: "Serve como referencia para o lado mais cinematografico do projeto."
+        title: "Pulso",
+        description: "Ritmo é retorno com diferença.",
+        detail: "É assim que o corpo reconhece o tempo."
     },
     {
-        title: "Voyager Golden Record",
-        description: "Uma coletanea enviada ao espaco para representar a diversidade sonora da Terra.",
-        detail: "Mostra como musica e curiosidade cientifica podem dividir a mesma mensagem."
+        title: "Eco",
+        description: "O som repete com atraso.",
+        detail: "Toda distância ganha resposta."
     },
     {
-        title: "Apollo: Atmospheres and Soundtracks",
-        description: "Paisagem ambient que combina silencio, espaco e sensacao de distancia.",
-        detail: "Ajuda a inspirar o ritmo mais contemplativo do visual."
+        title: "Cadência",
+        description: "Intervalos organizam a espera.",
+        detail: "Sem pausa, não há antecipação."
     },
     {
-        title: "Arvo Part - Spiegel im Spiegel",
-        description: "Minimalismo, repeticao e respiracao sonora em camadas delicadas.",
-        detail: "A logica de repeticao lembra orbitas, ciclos e leitura lenta."
+        title: "Ressonância",
+        description: "Uma vibração desperta outra.",
+        detail: "O encontro amplia a presença."
     }
 ];
 
 export const astronomyHighlights: HighlightItem[] = [
     {
-        title: "Sagittarius A*",
-        description: "O buraco negro supermassivo no centro da Via Lactea.",
-        detail: "Foi a principal referencia para imaginar massa, foco visual e gravidade."
+        title: "Órbita elíptica",
+        description: "Nada gira por acaso.",
+        detail: "Velocidade e atração entram em acordo."
     },
     {
-        title: "Pulsares",
-        description: "Estrelas de neutrons que emitem sinais regulares, quase como um metrônomo cosmico.",
-        detail: "A cadencia dos pulsos inspirou o comportamento das particulas orbitais."
+        title: "Maré gravitacional",
+        description: "A massa puxa até o que parece imóvel.",
+        detail: "O espaço responde em ondas lentas."
     },
     {
-        title: "Discos de acrecao",
-        description: "Materia superaquecida girando em alta velocidade ao redor de objetos extremos.",
-        detail: "Aqui aparece como a faixa brilhante alaranjada ao redor do horizonte de eventos."
+        title: "Retorno orbital",
+        description: "Voltar não é repetir igual.",
+        detail: "Cada passagem muda o ponto de vista."
     },
     {
-        title: "Lente gravitacional",
-        description: "A gravidade curva a luz e distorce o que esta ao redor.",
-        detail: "No site, isso foi recriado com deslocamento suave de estrelas e brilho."
+        title: "Centro de massa",
+        description: "Toda dança precisa de um eixo.",
+        detail: "Até dois corpos se curvam um ao outro."
     }
 ];
 
 export const connectionHighlights: HighlightItem[] = [
     {
-        title: "Frequencia e orbita",
-        description: "Tanto o som quanto o movimento celeste dependem de repeticao e periodicidade.",
-        detail: "Essa ponte conceitual sustenta o tema inteiro do portfolio."
+        title: "Frequência",
+        description: "Padrão que pode ser ouvido ou medido.",
+        detail: "Arte e cosmos se tocam aqui."
     },
     {
-        title: "Escala e contraste",
-        description: "Na musica e na astronomia, pequenas variacoes mudam muito a percepcao.",
-        detail: "Por isso o site trabalha luz intensa contra um fundo muito escuro."
+        title: "Contraste",
+        description: "Diferenças criam presença.",
+        detail: "Sem tensão, o impacto perde força."
     },
     {
-        title: "Silencio como ferramenta",
-        description: "Intervalos vazios organizam a experiencia, seja em uma composicao ou no espaco profundo.",
-        detail: "As areas escuras ajudam o visitante a sentir profundidade e foco."
+        title: "Ciclo",
+        description: "O retorno organiza a memória.",
+        detail: "É assim que algo passa a ser reconhecido."
     },
     {
-        title: "Narrativa por camadas",
-        description: "Um bom arranjo musical e um bom layout conduzem a atencao em etapas.",
-        detail: "As paginas foram desenhadas para abrir, explicar e aprofundar o assunto."
+        title: "Escala",
+        description: "O mesmo princípio muda de tamanho.",
+        detail: "Mas continua soando familiar."
     }
 ];
 
 export const homeMetrics: MetricItem[] = [
     {
-        value: "3",
-        label: "paginas obrigatorias",
-        note: "Home, Sobre e Conteudo"
+        value: "Pulso",
+        label: "ritmo que retorna",
+        note: "tempo com assinatura"
     },
     {
-        value: "100%",
-        label: "TypeScript puro",
-        note: "Sem frameworks externos"
+        value: "Órbita",
+        label: "força em equilíbrio",
+        note: "retorno sem queda"
     },
     {
-        value: "Canvas",
-        label: "efeito principal",
-        note: "Buraco negro em tempo real"
+        value: "Eco",
+        label: "distância que responde",
+        note: "presença em atraso"
     },
     {
-        value: "Responsivo",
-        label: "uso em celular",
-        note: "Layout adaptado para telas menores"
+        value: "Ressonância",
+        label: "vibração compartilhada",
+        note: "um corpo acorda outro"
     }
 ];
 
 export const timelineItems: TimelineItem[] = [
     {
         phase: "01",
-        title: "Definicao do tema",
-        description: "A ideia central foi fugir de referencias obvias e propor um portfolio com repertorio real, ligando astronomia, som e direcao visual."
+        title: "Pulsar",
+        description: "Uma estrela densa gira tão rápido que o sinal parece um relógio extremo.",
+        outcome: "Ritmo cósmico em estado puro."
     },
     {
         phase: "02",
-        title: "Estrutura das paginas",
-        description: "A navegacao foi organizada em tres paginas para abrir o assunto, explicar o conceito e reunir conteudos de apoio."
+        title: "Supernova",
+        description: "Quando uma estrela explode, matéria e energia se espalham em todas as direções.",
+        outcome: "Caos que também semeia estrutura."
     },
     {
         phase: "03",
-        title: "Camada visual",
-        description: "O CSS ganhou gradientes, paineis translucidos, tipografia mais elegante e hierarquia forte para parecer um site publicado."
+        title: "Órbita",
+        description: "Corpos não caem em linha reta porque velocidade e gravidade negociam o caminho.",
+        outcome: "Equilíbrio também é movimento."
     },
     {
         phase: "04",
-        title: "Animacao do fundo",
-        description: "O Canvas foi tratado como uma cena cinematografica com horizonte de eventos, disco de acrecao, particulas e glow."
+        title: "Lente gravitacional",
+        description: "A massa curva a luz e faz o universo parecer dobrar a própria imagem.",
+        outcome: "A visão perde a inocência."
     },
     {
         phase: "05",
-        title: "Interatividade",
-        description: "Cards, listas e secoes dinamicas passaram a ser renderizados com TypeScript para evitar repeticao e manter o codigo organizado."
+        title: "Disco de acreção",
+        description: "Matéria gira, aquece e brilha no limite de regiões extremas.",
+        outcome: "O perigo também produz luz."
     },
     {
         phase: "06",
-        title: "Entrega e hospedagem",
-        description: "O resultado final foi preparado para compilar em `dist/` e ser publicado em hospedagem estatica com link publico."
+        title: "Escala",
+        description: "Entre poeira, estrelas e galáxias, o cosmos muda de tamanho sem perder padrão.",
+        outcome: "Grandeza ainda pode ser legível."
     }
 ];
 
 export const collectionItems: CollectionItem[] = [
     {
-        category: "Escuta guiada",
-        title: "Trilhas para uma noite de observacao",
-        description: "Uma selecao de obras ambient, classicas e experimentais que funciona bem enquanto o visitante navega pelo tema.",
-        meta: "Objetivo: reforcar concentracao, escala e atmosfera."
+        category: "Arquivo",
+        title: "Voyager Golden Record",
+        description: "Uma saudação enviada ao vazio em nome da Terra.",
+        meta: "Faixa original.",
+        highlight: "A voz humana vira cápsula de memória.",
+        isWide: true,
+        image: {
+            src: "assets/images/voyager-golden-record.jpg",
+            alt: "Exibição do disco de ouro enviado pela missão Voyager",
+            caption: "Um disco para guardar voz, música e presença humana."
+        },
+        audio: {
+            src: "assets/audio/voyager-hello-earth.wav",
+            type: "audio/wav",
+            label: "Ouça a saudação",
+            caption: "\"Hello from the children of planet Earth\" no disco de ouro da Voyager.",
+            sourceLabel: "Fonte NASA",
+            sourceHref: "https://science.nasa.gov/resource/sounds-of-mars-hello-from-the-children-of-planet-earth/"
+        }
     },
     {
-        category: "Astronomia",
-        title: "Fenomenos usados como referencia visual",
-        description: "Buracos negros, pulsares, discos de acrecao e lente gravitacional foram escolhidos por terem movimento, contraste e potencia imagetica.",
-        meta: "Objetivo: justificar o fundo animado com base em ciencia real."
+        category: "Marte",
+        title: "Vento no planeta vermelho",
+        description: "O microfone da Perseverance deixa o ar marciano mais nítido ao ouvido.",
+        meta: "Áudio filtrado.",
+        highlight: "Não parece ficção quando o vento finalmente passa.",
+        image: {
+            src: "assets/images/mars-panorama.jpg",
+            alt: "Panorama da superfície de Marte registrado pela missão Perseverance",
+            caption: "A paisagem ajuda o ouvido a imaginar o ar raro do planeta."
+        },
+        audio: {
+            src: "assets/audio/mars-perseverance-filtered.wav",
+            type: "audio/wav",
+            label: "Ouça o vento",
+            caption: "Registro filtrado do ambiente em Marte feito pelo rover Perseverance.",
+            sourceLabel: "Fonte NASA",
+            sourceHref: "https://science.nasa.gov/resource/nasas-perseverance-rover-microphone-captures-sounds-from-mars/"
+        }
     },
     {
-        category: "Design",
-        title: "Paleta de calor contra profundidade",
-        description: "O visual combina tons quentes no centro energetico com azuis quase pretos ao redor, criando um palco dramatico para o conteudo.",
-        meta: "Objetivo: tornar o portfolio memoravel sem perder legibilidade."
+        category: "Impacto",
+        title: "Meteoro em Marte",
+        description: "O som chega como um \"bloop\" por causa da atmosfera rarefeita do planeta.",
+        meta: "Registro convertido.",
+        highlight: "Até uma colisão distante ganha assinatura sonora.",
+        isWide: true,
+        image: {
+            src: "assets/images/mars-meteoroid-impact.jpg",
+            alt: "Visual oficial da NASA para o registro do impacto de um meteoro em Marte",
+            caption: "Quando o dado bate, o ouvido percebe o evento."
+        },
+        audio: {
+            src: "assets/audio/mars-meteoroid-impact.wav",
+            type: "audio/wav",
+            label: "Ouça o impacto",
+            caption: "Som de um meteoro atingindo Marte a partir dos dados da missão InSight.",
+            sourceLabel: "Fonte NASA",
+            sourceHref: "https://science.nasa.gov/resource/listen-to-a-meteoroid-hitting-the-red-planet/"
+        }
     },
     {
-        category: "Narrativa",
-        title: "Abertura, explicacao e aprofundamento",
-        description: "Cada pagina cumpre um papel: convidar, contextualizar e sustentar a argumentacao com repertorio.",
-        meta: "Objetivo: ajudar na apresentacao ao vivo e na avaliacao do projeto."
+        category: "Pulso",
+        title: "Como ouvir um pulsar",
+        description: "Quando um feixe retorna em intervalos regulares, o ouvido reconhece um padrão.",
+        meta: "Ideia-chave.",
+        highlight: "No cosmos, repetição também vira identidade."
     },
     {
-        category: "Tecnologia",
-        title: "Site estatico com comportamento dinamico",
-        description: "Mesmo sem frameworks, o projeto usa TypeScript para modularidade, tipagem forte e componentes de interface montados por codigo.",
-        meta: "Objetivo: mostrar dominio tecnico com ferramentas basicas."
+        category: "Frequência",
+        title: "O padrão por trás do som",
+        description: "No áudio, define altura. Em sinais do universo, revela periodicidade e energia.",
+        meta: "Ponte central.",
+        highlight: "É a mesma lógica em escalas diferentes.",
+        image: {
+            src: "assets/images/crab-nebula-sonification.jpg",
+            alt: "Imagem oficial da sonificação da Nebulosa do Caranguejo",
+            caption: "Quando o dado vira som, o padrão fica quase tátil."
+        }
     },
     {
-        category: "Publicacao",
-        title: "Pensado para link real na internet",
-        description: "Os arquivos foram organizados para que o deploy em GitHub Pages ou outro host estatico seja simples e confiavel.",
-        meta: "Objetivo: transformar o trabalho em algo acessivel remotamente."
+        category: "Silêncio",
+        title: "O intervalo que faz sentido",
+        description: "Sem pausa, sem escuro, sem distância, o espanto perde força.",
+        meta: "Leitura final.",
+        highlight: "O que falta também compõe."
     }
 ];
 
 export const sessionItems: SessionItem[] = [
     {
-        label: "Rota 01",
-        title: "Entrar pela Home",
-        description: "Apresente o conceito geral, mostre o fundo em movimento e use os cards interativos para introduzir o tema rapidamente."
+        label: "Escuta 01",
+        title: "Comece pela origem",
+        description: "Ouça a saudação da Voyager como se a Terra estivesse ensaiando sua apresentação.",
+        duration: "1 faixa",
+        payoff: "A voz humana abre a escala."
     },
     {
-        label: "Rota 02",
-        title: "Abrir a pagina Sobre",
-        description: "Explique por que o assunto foi escolhido, destaque a parte tecnica e use a linha do tempo como guia da sua fala."
+        label: "Escuta 02",
+        title: "Passe pelo vento",
+        description: "Em Marte, o ar é raro, mas ainda assim move, raspa e deixa vestígio.",
+        duration: "1 faixa",
+        payoff: "O planeta ganha matéria."
     },
     {
-        label: "Rota 03",
-        title: "Fechar em Conteudo",
-        description: "Mostre que o projeto nao depende so do efeito visual: existe curadoria, repertorio e organizacao por secoes."
+        label: "Escuta 03",
+        title: "Feche no impacto",
+        description: "O som do meteoro transforma distância em evento e dado em memória.",
+        duration: "1 faixa",
+        payoff: "O espaço deixa de ser abstrato."
     }
 ];

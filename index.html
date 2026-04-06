@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="Ressonancia Universal e um portfolio tematico em TypeScript sobre musica, astronomia e a ciencia das frequencias."
+        content="Home temática sobre ressonância, frequência e padrões que retornam."
     >
-    <title>Ressonancia Universal | Home</title>
+    <title>Ressonância Universal | Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="home">
@@ -17,128 +17,251 @@
         <header class="site-header">
             <a class="brand" href="index.html">
                 <span class="brand-mark"></span>
-                <span>Ressonancia Universal</span>
+                <span>Ressonância Universal</span>
             </a>
 
-            <nav class="nav" aria-label="Navegacao principal">
-                <a data-nav="home" href="index.html">Home</a>
-                <a data-nav="sobre" href="sobre.html">Sobre</a>
-                <a data-nav="conteudo" href="conteudo.html">Conteudo</a>
-            </nav>
+            <div class="header-actions">
+                <nav class="nav" aria-label="Navegação principal">
+                    <a data-nav="home" href="index.html">Home</a>
+                    <a data-nav="sobre" href="sobre.html">Sobre</a>
+                    <a data-nav="conteudo" href="conteudo.html">Conteúdo</a>
+                </nav>
+
+                <a
+                    class="header-link"
+                    href="https://github.com/qaswzxex789/portfolio"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Repositório
+                </a>
+            </div>
         </header>
 
         <main id="app" class="main-content">
             <section class="hero hero-home" data-reveal>
                 <div class="hero-copy">
-                    <p class="eyebrow">Portfolio em TypeScript puro</p>
-                    <h1>Um observatorio digital sobre som, espaco e gravidade.</h1>
+                    <p class="eyebrow">Tema: ressonância</p>
+                    <h1>Tudo vibra antes de ser visto.</h1>
                     <p class="lead">
-                        Este projeto conecta musica, astronomia e design interativo em uma experiencia
-                        visual inspirada no cinema espacial. A proposta e mostrar como frequencias,
-                        orbitas e escalas podem conversar em um portfolio bonito, informativo e vivo.
+                        Do compasso ao colapso de uma estrela, frequência é a forma mais elegante
+                        de repetir o mundo.
                     </p>
 
                     <div class="hero-actions">
-                        <a class="button button-primary" href="conteudo.html">Explorar conteudos</a>
-                        <a class="button button-secondary" href="sobre.html">Entender o conceito</a>
+                        <a class="button button-primary" href="#pulsos">Ver pulsos</a>
+                        <a class="button button-secondary" href="#essencia">Ler a essência</a>
                     </div>
                 </div>
 
-                <aside class="hero-panel content-panel">
-                    <p class="panel-label">Leitura rapida</p>
-                    <div id="heroMetrics" class="metric-grid"></div>
-                    <p class="panel-note">
-                        O fundo animado foi desenhado em Canvas com particulas, glow, lente gravitacional
-                        fake e movimento por `requestAnimationFrame`.
-                    </p>
+                <aside class="hero-sidebar">
+                    <article class="hero-panel content-panel spotlight-panel">
+                        <p class="panel-label">Leitura em 5s</p>
+                        <div id="heroMetrics" class="metric-grid"></div>
+                        <p class="panel-note">
+                            Frequência não é só som. É retorno, padrão e expectativa.
+                        </p>
+                    </article>
+
+                    <article class="hero-panel content-panel accent-panel">
+                        <p class="panel-label">Pequeno truque</p>
+                        <p>
+                            Se uma ideia ficar ecoando depois do scroll, ela fez o trabalho certo.
+                        </p>
+                    </article>
                 </aside>
             </section>
 
-            <section class="section-grid" data-reveal>
-                <article class="content-panel">
-                    <p class="section-label">Tema</p>
-                    <h2>Por que esse assunto funciona bem em um portfolio?</h2>
+            <section class="visual-showcase" data-reveal>
+                <article class="content-panel visual-copy">
+                    <p class="section-label">Visual</p>
+                    <h2>Algumas frequências pedem imagem.</h2>
                     <p>
-                        Porque ele foge do obvio. Em vez de repetir referencias de cultura pop, o site
-                        usa um tema real e autoral: a relacao entre fenomenos cosmicos e percepcao sonora.
-                        Isso cria repertorio, personalidade e um visual forte para apresentacao academica.
+                        O disco de ouro e a sonificação mostram como memória, padrão e vibração
+                        também podem ser vistos.
                     </p>
+                </article>
+
+                <figure class="visual-card visual-card-feature">
+                    <img
+                        src="assets/images/voyager-golden-record.jpg"
+                        alt="Exibição do disco de ouro enviado pela missão Voyager"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>
+                        <span class="visual-caption-label">Memória lançada</span>
+                        <p>Voz, música e presença humana guardadas para atravessar o vazio.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="visual-card">
+                    <img
+                        src="assets/images/crab-nebula-sonification.jpg"
+                        alt="Imagem oficial da sonificação da Nebulosa do Caranguejo"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>
+                        <span class="visual-caption-label">Padrão audível</span>
+                        <p>A Nebulosa do Caranguejo lembra que dado também pode soar.</p>
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="intro-ribbon" data-reveal>
+                <article class="content-panel">
+                    <p class="section-label">Ressonância</p>
+                    <h2>O ritmo aparece em toda escala.</h2>
+                    <p>
+                        No corpo, ele vira batida. No céu, vira ciclo, órbita, pulso e maré.
+                    </p>
+
+                    <div class="scan-list">
+                        <article class="scan-item">
+                            <strong>Pulso</strong>
+                            <span>O tempo ganha marca.</span>
+                        </article>
+                        <article class="scan-item">
+                            <strong>Órbita</strong>
+                            <span>O retorno encontra equilíbrio.</span>
+                        </article>
+                        <article class="scan-item">
+                            <strong>Eco</strong>
+                            <span>A distância devolve presença.</span>
+                        </article>
+                        <article class="scan-item">
+                            <strong>Ressonância</strong>
+                            <span>Uma vibração desperta outra.</span>
+                        </article>
+                    </div>
                 </article>
 
                 <article class="content-panel accent-panel">
-                    <p class="section-label">Destaque visual</p>
-                    <blockquote>
-                        "A materia gira, aquece e brilha enquanto a gravidade dobra a cena."
-                    </blockquote>
+                    <p class="section-label">Convite</p>
+                    <h2>Primeiro se sente, depois se explica.</h2>
                     <p>
-                        O buraco negro foi pensado como pano de fundo cinematografico, sem atrapalhar a
-                        navegacao principal nem o conteudo das paginas.
+                        O olhar percebe brilho. O ouvido percebe repetição. Os dois se encontram aqui.
                     </p>
                 </article>
             </section>
 
-            <section class="section-heading" data-reveal>
-                <p class="section-label">Interacoes</p>
-                <h2>Tres portas de entrada para o universo do projeto.</h2>
-                <p>
-                    Os cards abaixo trocam informacoes em tempo real e reforcam o tema do portfolio com
-                    pequenas pifadas editoriais.
-                </p>
-            </section>
-
-            <section class="feature-grid">
-                <article class="info-card" data-reveal>
-                    <p class="card-kicker">Musica</p>
-                    <h3>Obras que parecem olhar para o ceu.</h3>
-                    <p id="musica" class="fact-value" aria-live="polite">Carregando selecao...</p>
-                    <p id="musicaDetalhe" class="fact-meta">Preparando uma referencia sonora.</p>
-                    <button id="btnMusica" class="button button-ghost" type="button">Trocar selecao</button>
-                </article>
-
-                <article class="info-card" data-reveal>
-                    <p class="card-kicker">Astronomia</p>
-                    <h3>Fenomenos que inspiram escala e movimento.</h3>
-                    <p id="planeta" class="fact-value" aria-live="polite">Carregando destaque...</p>
-                    <p id="planetaDetalhe" class="fact-meta">Buscando um objeto celeste.</p>
-                    <button id="btnPlaneta" class="button button-ghost" type="button">Ver outro fenomeno</button>
-                </article>
-
-                <article class="info-card" data-reveal>
-                    <p class="card-kicker">Conexao</p>
-                    <h3>Ideias que ligam ciencia e sensacao.</h3>
-                    <p id="conexao" class="fact-value" aria-live="polite">Carregando insight...</p>
-                    <p id="conexaoDetalhe" class="fact-meta">Montando a ponte entre os temas.</p>
-                    <button id="btnConexao" class="button button-ghost" type="button">Gerar nova leitura</button>
-                </article>
-            </section>
-
-            <section class="split-layout" data-reveal>
-                <article class="content-panel">
-                    <p class="section-label">Experiencia</p>
-                    <h2>Feito para parecer um site hospedado de portfolio, nao um exercicio cru.</h2>
-                    <ul class="detail-list">
-                        <li>Layout responsivo com contraste alto e leitura confortavel.</li>
-                        <li>Navegacao simples por paginas reais: Home, Sobre e Conteudo.</li>
-                        <li>Canvas fixo atras de todo o site, sem quebrar o fluxo principal.</li>
-                        <li>Codigo modular em TypeScript, pronto para compilar em `dist/`.</li>
-                    </ul>
-                </article>
-
-                <article class="content-panel">
-                    <p class="section-label">Proxima etapa</p>
-                    <h2>Publicacao online</h2>
+            <section id="pulsos" class="feature-stage" data-reveal>
+                <div class="section-heading section-heading-inline">
+                    <div>
+                        <p class="section-label">Três eixos</p>
+                        <h2>Pulso, órbita e ressonância.</h2>
+                    </div>
                     <p>
-                        A estrutura foi pensada para hospedagem estatica. Com GitHub Pages ativado, qualquer
-                        pessoa com o link consegue abrir o site remotamente em desktop ou celular.
+                        Cada card olha para a mesma ideia por um ângulo diferente.
                     </p>
-                    <a class="inline-link" href="conteudo.html">Ver o catalogo completo do projeto</a>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="info-card" data-reveal data-interactive-card data-cycle-button="btnMusica">
+                        <p class="card-kicker">Pulso</p>
+                        <h3>Tempo que retorna com diferença.</h3>
+                        <p id="musica" class="fact-value" aria-live="polite">Carregando seleção...</p>
+                        <p id="musicaDetalhe" class="fact-meta">Preparando o próximo pulso.</p>
+                        <p class="interaction-hint">Clique e troque o foco.</p>
+                        <button id="btnMusica" class="button button-ghost" type="button">Trocar pulso</button>
+                    </article>
+
+                    <article class="info-card" data-reveal data-interactive-card data-cycle-button="btnPlaneta">
+                        <p class="card-kicker">Órbita</p>
+                        <h3>Movimento preso e livre ao mesmo tempo.</h3>
+                        <p id="planeta" class="fact-value" aria-live="polite">Carregando destaque...</p>
+                        <p id="planetaDetalhe" class="fact-meta">Buscando outra curva estável.</p>
+                        <p class="interaction-hint">Clique e mude o foco.</p>
+                        <button id="btnPlaneta" class="button button-ghost" type="button">Trocar órbita</button>
+                    </article>
+
+                    <article class="info-card" data-reveal data-interactive-card data-cycle-button="btnConexao">
+                        <p class="card-kicker">Ressonância</p>
+                        <h3>Quando uma vibração acorda outra.</h3>
+                        <p id="conexao" class="fact-value" aria-live="polite">Carregando insight...</p>
+                        <p id="conexaoDetalhe" class="fact-meta">Ajustando a próxima conexão.</p>
+                        <p class="interaction-hint">Clique e gere outra leitura.</p>
+                        <button id="btnConexao" class="button button-ghost" type="button">Mudar leitura</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="essencia" class="editorial-grid" data-reveal>
+                <article class="content-panel wide-panel">
+                    <p class="section-label">Essência</p>
+                    <h2>Padrão é o que liga tudo.</h2>
+                    <p>
+                        Mesmo quando mudam matéria, escala e linguagem, certas formas insistem em voltar.
+                    </p>
+
+                    <div class="scan-list">
+                        <article class="scan-item">
+                            <strong>Frequência</strong>
+                            <span>Organiza o retorno.</span>
+                        </article>
+                        <article class="scan-item">
+                            <strong>Gravidade</strong>
+                            <span>Segura a dança no lugar.</span>
+                        </article>
+                        <article class="scan-item">
+                            <strong>Ritmo</strong>
+                            <span>Transforma repetição em sentido.</span>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="content-panel accent-panel">
+                    <p class="section-label">Fecho</p>
+                    <h2>Entre medida e sensação.</h2>
+                    <p>
+                        O que parece abstrato deixa de ser distante quando começa a vibrar.
+                    </p>
+                    <a class="inline-link" href="#pulsos">Voltar aos eixos</a>
                 </article>
             </section>
         </main>
 
         <footer class="site-footer">
-            <p>Ressonancia Universal</p>
-            <p>TypeScript, HTML, CSS e Canvas. <span id="footerYear"></span></p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <span class="brand-mark"></span>
+                        <span>Ressonância Universal</span>
+                    </a>
+                    <p class="footer-note">
+                        Home dedicada a pulso, retorno e ressonância.
+                    </p>
+                </div>
+
+                <div>
+                    <p class="footer-title">Navegação</p>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="sobre.html">Sobre</a>
+                        <a href="conteudo.html">Conteúdo</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="footer-title">Tema</p>
+                    <div class="footer-links">
+                        <span>Pulso</span>
+                        <span>Órbita</span>
+                        <span>Eco</span>
+                        <span>Ressonância</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="footer-title">Explorar</p>
+                    <div class="footer-links">
+                        <a href="#essencia">Essência</a>
+                        <a href="https://github.com/qaswzxex789/portfolio" target="_blank" rel="noreferrer">GitHub</a>
+                        <span><span id="footerYear"></span></span>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 

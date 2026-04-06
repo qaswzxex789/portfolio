@@ -77,6 +77,8 @@ class BlackHoleBackground {
     private frameId = 0;
     private lastTime = 0;
     private isRunning = false;
+    private mobileMode = false;
+    private frameInterval = 1000 / 60;
 
     public constructor(canvas: HTMLCanvasElement) {
         const context = canvas.getContext("2d");
@@ -100,9 +102,11 @@ class BlackHoleBackground {
     }
 
     private readonly handleResize = (): void => {
+        this.mobileMode = window.innerWidth < 768;
+        this.frameInterval = this.mobileMode ? 1000 / 28 : 1000 / 60;
         this.width = window.innerWidth;
         this.height = window.innerHeight;
-        this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+        this.dpr = Math.min(window.devicePixelRatio || 1, this.mobileMode ? 1.5 : 2);
 
         this.canvas.width = Math.round(this.width * this.dpr);
         this.canvas.height = Math.round(this.height * this.dpr);
@@ -114,7 +118,7 @@ class BlackHoleBackground {
     };
 
     private readonly handlePointerMove = (event: PointerEvent): void => {
-        if (this.width === 0 || this.height === 0) {
+        if (this.mobileMode || this.width === 0 || this.height === 0) {
             return;
         }
 
@@ -142,10 +146,10 @@ class BlackHoleBackground {
         this.haloParticles.length = 0;
         this.infallParticles.length = 0;
 
-        const starCount = this.reducedMotion ? 110 : 180;
-        const diskCount = this.reducedMotion ? 140 : 240;
-        const haloCount = this.reducedMotion ? 16 : 28;
-        const infallCount = this.reducedMotion ? 22 : 40;
+        const starCount = this.mobileMode ? 70 : this.reducedMotion ? 120 : 180;
+        const diskCount = this.mobileMode ? 96 : this.reducedMotion ? 160 : 240;
+        const haloCount = this.mobileMode ? 10 : this.reducedMotion ? 18 : 28;
+        const infallCount = this.mobileMode ? 14 : this.reducedMotion ? 24 : 40;
 
         for (let index = 0; index < starCount; index += 1) {
             this.stars.push({
@@ -225,9 +229,12 @@ class BlackHoleBackground {
     }
 
     private getCenter(): Point {
+        const pointerX = this.mobileMode ? 0 : this.pointer.currentX * 32;
+        const pointerY = this.mobileMode ? 0 : this.pointer.currentY * 18;
+
         return {
-            x: this.width * 0.5 + this.pointer.currentX * 32,
-            y: this.height * 0.42 + this.pointer.currentY * 18
+            x: this.width * 0.5 + pointerX,
+            y: this.height * 0.42 + pointerY
         };
     }
 
@@ -256,12 +263,17 @@ class BlackHoleBackground {
             return;
         }
 
-        const delta = this.lastTime === 0 ? 1 : Math.min((timestamp - this.lastTime) / 16.6667, 2.2);
+        if (this.lastTime !== 0 && timestamp - this.lastTime < this.frameInterval) {
+            this.frameId = window.requestAnimationFrame(this.render);
+            return;
+        }
+
+        const delta = this.lastTime === 0 ? 1 : Math.min((timestamp - this.lastTime) / 16.6667, this.mobileMode ? 1.2 : 2.2);
         const time = timestamp * 0.001;
         this.lastTime = timestamp;
 
-        this.pointer.currentX += (this.pointer.targetX - this.pointer.currentX) * 0.06;
-        this.pointer.currentY += (this.pointer.targetY - this.pointer.currentY) * 0.06;
+        this.pointer.currentX += (this.pointer.targetX - this.pointer.currentX) * (this.mobileMode ? 0.02 : 0.06);
+        this.pointer.currentY += (this.pointer.targetY - this.pointer.currentY) * (this.mobileMode ? 0.02 : 0.06);
 
         this.updateParticles(delta);
         this.drawScene(time);
@@ -270,7 +282,7 @@ class BlackHoleBackground {
     };
 
     private updateParticles(delta: number): void {
-        const motionFactor = this.reducedMotion ? 0.55 : 1;
+        const motionFactor = this.mobileMode ? 0.34 : this.reducedMotion ? 0.58 : 1;
 
         for (const particle of this.diskParticles) {
             particle.angle += particle.speed * delta * motionFactor;
@@ -375,6 +387,7 @@ class BlackHoleBackground {
 
     private drawDiskBase(time: number, center: Point, intensity: number): void {
         const diskRadius = this.getDiskRadius();
+        const ringSpeed = this.mobileMode ? 0.28 : 0.6;
 
         this.ctx.save();
         this.ctx.translate(center.x, center.y);
@@ -401,8 +414,8 @@ class BlackHoleBackground {
             this.ctx.ellipse(
                 0,
                 0,
-                this.getInnerRadius() * (multiplier + Math.sin(time * 0.6 + index) * 0.02),
-                this.getInnerRadius() * (multiplier + Math.sin(time * 0.6 + index) * 0.02),
+                this.getInnerRadius() * (multiplier + Math.sin(time * ringSpeed + index) * 0.02),
+                this.getInnerRadius() * (multiplier + Math.sin(time * ringSpeed + index) * 0.02),
                 0,
                 0,
                 Math.PI * 2
@@ -594,6 +607,7 @@ function renderTimeline(): void {
                     <span class="timeline-phase">${item.phase}</span>
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
+                    <p class="timeline-outcome">${item.outcome}</p>
                 </article>
             `
         )
@@ -610,11 +624,68 @@ function renderCollections(): void {
     container.innerHTML = collectionItems
         .map(
             (item) => `
-                <article class="collection-card" data-reveal>
+                <article
+                    class="collection-card ${item.isWide ? "is-wide" : ""}"
+                    data-reveal
+                    data-interactive-card
+                    data-card-group="collections"
+                >
+                    ${
+                        item.image
+                            ? `
+                                <figure class="card-visual">
+                                    <img
+                                        src="${item.image.src}"
+                                        alt="${item.image.alt}"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                    <figcaption>${item.image.caption}</figcaption>
+                                </figure>
+                            `
+                            : ""
+                    }
                     <span class="collection-category">${item.category}</span>
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
-                    <span class="collection-meta">${item.meta}</span>
+                    ${
+                        item.audio
+                            ? `
+                                <div class="card-audio" data-audio-block>
+                                    <div class="audio-meta">
+                                        <span class="audio-label">${item.audio.label}</span>
+                                        <a
+                                            class="audio-source"
+                                            href="${item.audio.sourceHref}"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            ${item.audio.sourceLabel}
+                                        </a>
+                                    </div>
+                                    <audio controls preload="none" data-audio-player>
+                                        <source src="${item.audio.src}" type="${item.audio.type}">
+                                        Seu navegador nao suporta audio HTML5.
+                                    </audio>
+                                    <p class="audio-caption">${item.audio.caption}</p>
+                                </div>
+                            `
+                            : ""
+                    }
+                    <div class="card-footer">
+                        <span class="collection-meta">${item.meta}</span>
+                        <button
+                            class="card-toggle"
+                            type="button"
+                            data-card-toggle
+                            data-open-label="Abrir foco"
+                            data-close-label="Fechar foco"
+                            aria-expanded="false"
+                        >
+                            Abrir foco
+                        </button>
+                    </div>
+                    <p class="card-extra">${item.highlight}</p>
                 </article>
             `
         )
@@ -630,11 +701,30 @@ function renderSessions(): void {
 
     container.innerHTML = sessionItems
         .map(
-            (item) => `
-                <article class="session-card" data-reveal>
+            (item, index) => `
+                <article
+                    class="session-card ${index === 0 ? "is-wide" : ""}"
+                    data-reveal
+                    data-interactive-card
+                    data-card-group="sessions"
+                >
                     <span class="session-label">${item.label}</span>
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
+                    <div class="card-footer">
+                        <span class="session-duration">${item.duration}</span>
+                        <button
+                            class="card-toggle"
+                            type="button"
+                            data-card-toggle
+                            data-open-label="Abrir ganho"
+                            data-close-label="Fechar ganho"
+                            aria-expanded="false"
+                        >
+                            Abrir ganho
+                        </button>
+                    </div>
+                    <p class="card-extra">${item.payoff}</p>
                 </article>
             `
         )
@@ -685,6 +775,14 @@ function setupRevealAnimations(): void {
         return;
     }
 
+    const disableReveal = window.matchMedia("(max-width: 767px)").matches
+        || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (disableReveal) {
+        revealElements.forEach((element) => element.classList.add("is-visible"));
+        return;
+    }
+
     const observer = new IntersectionObserver(
         (entries, currentObserver) => {
             entries.forEach((entry) => {
@@ -700,7 +798,129 @@ function setupRevealAnimations(): void {
         }
     );
 
-    revealElements.forEach((element) => observer.observe(element));
+    revealElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+
+        if (rect.top <= window.innerHeight * 0.92) {
+            element.classList.add("is-visible");
+            return;
+        }
+
+        observer.observe(element);
+    });
+
+    window.setTimeout(() => {
+        revealElements.forEach((element) => element.classList.add("is-visible"));
+    }, 1200);
+}
+
+function setCardExpanded(card: HTMLElement, expanded: boolean): void {
+    const toggle = card.querySelector<HTMLButtonElement>("[data-card-toggle]");
+
+    if (!toggle) {
+        return;
+    }
+
+    const openLabel = toggle.dataset.openLabel ?? "Abrir";
+    const closeLabel = toggle.dataset.closeLabel ?? "Fechar";
+
+    card.classList.toggle("is-active", expanded);
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.textContent = expanded ? closeLabel : openLabel;
+}
+
+function collapseCardGroup(card: HTMLElement): void {
+    const group = card.dataset.cardGroup;
+
+    if (!group) {
+        return;
+    }
+
+    document.querySelectorAll<HTMLElement>(`[data-card-group="${group}"]`).forEach((otherCard) => {
+        if (otherCard !== card) {
+            setCardExpanded(otherCard, false);
+        }
+    });
+}
+
+function setupInteractiveCards(): void {
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-interactive-card]"));
+
+    if (cards.length === 0) {
+        return;
+    }
+
+    const desktopSpotlight = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 981px)").matches;
+
+    cards.forEach((card) => {
+        const toggleButton = card.querySelector<HTMLButtonElement>("[data-card-toggle]");
+        const cycleButtonId = card.dataset.cycleButton;
+        const cycleButton = cycleButtonId ? getOptionalElementById<HTMLButtonElement>(cycleButtonId) : null;
+
+        if (toggleButton) {
+            setCardExpanded(card, false);
+            toggleButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                const willExpand = !card.classList.contains("is-active");
+                collapseCardGroup(card);
+                setCardExpanded(card, willExpand);
+            });
+        }
+
+        card.addEventListener("click", (event) => {
+            const target = event.target as HTMLElement;
+
+            if (target.closest("button, a, audio, [data-audio-block]")) {
+                return;
+            }
+
+            if (cycleButton) {
+                cycleButton.click();
+                return;
+            }
+
+            if (toggleButton) {
+                const willExpand = !card.classList.contains("is-active");
+                collapseCardGroup(card);
+                setCardExpanded(card, willExpand);
+            }
+        });
+
+        if (!desktopSpotlight) {
+            return;
+        }
+
+        card.addEventListener("pointermove", (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width) * 100;
+            const y = ((event.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty("--pointer-x", `${x}%`);
+            card.style.setProperty("--pointer-y", `${y}%`);
+        });
+
+        card.addEventListener("pointerleave", () => {
+            card.style.setProperty("--pointer-x", "50%");
+            card.style.setProperty("--pointer-y", "50%");
+        });
+    });
+}
+
+function setupAudioPlayers(): void {
+    const players = Array.from(document.querySelectorAll<HTMLAudioElement>("[data-audio-player]"));
+
+    if (players.length === 0) {
+        return;
+    }
+
+    players.forEach((player) => {
+        player.addEventListener("play", () => {
+            players.forEach((otherPlayer) => {
+                if (otherPlayer !== player) {
+                    otherPlayer.pause();
+                }
+            });
+        });
+    });
 }
 
 function setFooterYear(): void {
@@ -719,6 +939,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setupFactCards();
     highlightCurrentNavigation();
     setupRevealAnimations();
+    setupInteractiveCards();
+    setupAudioPlayers();
     setFooterYear();
 
     const canvas = getOptionalElementById<HTMLCanvasElement>("blackhole");
